@@ -1,0 +1,210 @@
+//====================================================================================================
+.header {
+	position: relative;
+
+	&__container {
+		display: flex;
+		height: rem(120);
+		justify-conten: space-around;
+		align-items: center;
+		background-color: $black;
+
+		.block-logo-sitename{
+			display: flex;
+			align-items: center;
+			margin-right: auto;
+			@media(max-width:375px){
+				
+			}
+		}
+		@media(max-width:425px){
+			flex-direction: column;
+			justify-content: center;
+			align-items: stretch;
+		}
+		@media(max-width:375px){
+			padding: rem(20) 0;
+			height: rem(140);
+		}
+	}
+
+	&__logo {
+		position: absolute;
+		top: rem(15);
+		@include adaptiveValue("top", 15, 25);
+		left: rem(63);
+
+		@media(max-width:1024px) {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin-left: rem(20);
+		}
+
+		svg {
+			width: auto;
+			height: rem(130);
+			@include adaptiveValue("height", 130, 50);
+		}
+	}
+
+	&__site-name {
+		margin-left: rem(260);
+		@include adaptiveValue("margin-left", 260, 100);
+
+		@media(max-width:1024px) {
+			@include adaptiveValue("margin-left", 50, 20);
+		}
+
+		@media(max-width:425px){
+			margin-right: rem(10);
+			// margin: 0;
+		}
+
+		h1 {
+			font-size: rem(52);
+			color: $white;
+			font-weight: 500;
+			text-transform: uppercase;
+			text-shadow: 0px 2px 4.9px #FFF;
+			@include adaptiveValue("font-size", 52, 35);
+			@media(max-width:425px){
+				font-size: rem(30);
+				text-align: center;
+			}
+			@media(max-width:375px){
+				text-align: center;
+				font-size: rem(30);
+			}
+		}
+	}
+}
+
+.button {
+	@include adaptiveValue("font-size", 24, 16);
+	margin-right: rem(100);
+	@include adaptiveValue("margin-right", 100, 20);
+	border-radius: 0.25rem;
+	font-size: rem(24);
+	font-weight: 500;
+	text-transform: uppercase;
+	background: linear-gradient(45deg, darken($mainColorPuprple, 30%), $mainColorPuprple);
+	background-size: 400% 400%;
+	animation: gradientAnimation 1s infinite;
+	@media(max-width:425px){
+		margin: 0 auto;
+	}
+	@media(max-width:375px){
+		margin: rem(10) rem(20);
+	}
+
+	a {
+		display: block;
+		color: $white;
+		height: 100%;
+		width: 100%;
+		padding: 0.75rem 1.5rem;
+		// @include adaptiveValue("padding",15 ,5 );
+		// animation: colorChange 3s infinite;
+		/* Измените значение времени (10s) по вашему усмотрению */
+		@media(max-width:375px){
+			text-align: center;
+			font-size: rem(22);
+		}
+	}
+}
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes colorChange {
+	0% {
+		color: red;
+	}
+
+	25% {
+		color: yellow;
+	}
+
+	50% {
+		color: blue;
+	}
+
+	75% {
+		color: green;
+	}
+
+	100% {
+		color: red;
+	}
+}
+
+
+
+
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		margin-right: rem(20);
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: $white;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

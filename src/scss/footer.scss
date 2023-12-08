@@ -1,0 +1,36 @@
+//====================================================================================================
+.footer {
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: rem(72);
+        background-color: $mainColorPuprple;
+
+        @media(max-width: 425px) {
+            font-size: rem(14);
+            text-align: center;
+            padding: 0 rem(10);
+            line-height: rem(30);
+        }
+        @media(max-width: 320px){
+            text-align: left;
+        }
+
+        p {
+            display: flex;
+            font-size: rem(24);
+            color: $white;
+
+            &::before {
+                margin-right: rem(5);
+                @media(max-width: 320px){
+
+                }
+            }
+        }
+    }
+}
+
+//====================================================================================================
