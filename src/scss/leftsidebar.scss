@@ -1,0 +1,65 @@
+.main {
+
+    &__left-sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include adaptiveValue("padding-top", 100, 0);
+
+        .leftsidebar__menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            text-shadow: 5px 5px 10px $black;
+
+            .item-menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position:relative;
+                @include adaptiveValue("margin-bottom", 20, 0);
+                transition: height 1s ease;
+
+                &.active {
+
+
+                    a {
+                        color: $black;
+                        @include adaptiveValue("font-size", 50, 20);
+                        &:hover {
+                            @include adaptiveValue("font-size", 50, 20);
+                        }
+                    }
+                }
+
+                img {
+                    position: absolute;
+                }
+
+                a {
+                    z-index: 1;
+                    color: $white;
+                    font-size: 2rem;
+                    font-weight: 600;
+                    line-height: 2.91425rem;
+                    /* 145.711% */
+                    text-transform: uppercase;
+                    transition: font-size 0.3s ease;
+                    @include adaptiveValue("font-size", 40, 20);
+
+                    &::before {}
+
+                    &:hover {
+                        font-size: rem(45);
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.leftsidebar {
+    &__menu {}
+}

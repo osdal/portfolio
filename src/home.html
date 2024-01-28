@@ -1,16 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"HomePage"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				<h1>Hello</h1>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"HomePage"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="main">
+			<div class="main__container">
+				@@include('html/_mainsidebar.htm',{})
+				<section class="main__content">
+					<div class="first-page">
+						<div class="text-block">
+							<h1>My name is <span>DMYTRO O...</span></h1>
+							<div class="about">
+								<p class="">Web developer from Ukraine</p>
+								<p>I will develop a website
+									for you from the idea to filling
+									it with content.</p>
+							</div>
+						</div>
+						<div class="portret-block-wrapper">
+							<div class="portret-block">
+								<img src="@img/portret.png" alt="">
+								<h2>From zero to result</h2>
+							</div>
+						</div>
+						<img class="bg-img-homepage" src="@img/lips.png" alt="">
+					</div>
+				</section>
+				<section class="main__right-sidebar">
+					<ul class="contact-block">
+						<li class="contact-item "><a href="#" class="_icon-Github-icon"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-twitter"></a></li>
+						<li class="contact-item "><a href="#" class="_icon-email"></a></li>
+						<li class="contact-item "><a href="#" class="_icon-facebook"></a></li>
+						<li class="contact-item "><a href="#" class="_icon-_instagram"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-linkedin"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-messenger"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-telegram"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-upwork"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-viber"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-whatsapp"></a></li>
+						<li class="contact-item"><a href="#" class="_icon-youtube"></a></li>
+					</ul>
+				</section>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
 </html>

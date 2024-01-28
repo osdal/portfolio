@@ -151,6 +151,9 @@ body {
 // Підключення стилів окремих блоків
 @import "header";
 @import "footer";
+@import "leftsidebar";
 
 // Підключення стилів окремих сторінок
 @import "home";
+@import "rightsidebar";
+@import "first_page";

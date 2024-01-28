@@ -1,0 +1,53 @@
+.main__right-sidebar {
+    .contact-block {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        color: $white;
+        // gap: rem(25);
+        margin: rem(10) 0;
+
+        .contact-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 100;
+            
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: rem(26);
+                padding: 0 rem(5);
+                font-size: rem(32);
+                text-shadow: 5px 5px 10px $black;
+                transition: all 0.3s;
+
+                &:hover {
+                    // color:$black;
+                    text-shadow: 5px 5px 20px $white;
+                    font-size: rem(44);
+                    margin-bottom:rem(14);
+                }
+
+                /* Абсолютное позиционирование для сохранения места элемента в потоке документа */
+                .flex-item:hover~.flex-item {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                /* Установка правильного отступа между элементами */
+                .flex-item+.flex-item {
+                    margin-top: 20px;
+                }
+
+            }
+        }
+
+        ._icon-facebook {
+            color: #284bfc;
+        }
+    }
+}

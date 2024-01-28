@@ -1,3 +1,40 @@
 //====================================================================================================
+.main {
+    display: flex;
+
+    &__container {
+        display: flex;
+        width: 100%;
+    }
+
+    &__left-sidebar {
+        @include adaptiveValue("width", 280, 200);
+        height: 100%;
+        background: linear-gradient(to bottom, $black, $mainColorPuprple);
+    }
+
+    &__content {
+        z-index: -1;
+        position: relative;
+        flex: 20;
+        height: 100%;
+        background-image: url('@img/Background.png');
+
+        .bg_main-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: linear-gradient(to bottom, $black, $mainColorPuprple);
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__right-sidebar {
+        flex: 1;
+        background: linear-gradient(to bottom, $black, $mainColorPuprple);
+    }
+}
 
 //====================================================================================================
