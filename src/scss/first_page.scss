@@ -4,9 +4,11 @@
     padding: rem(20) 0;
 
     h1 {
-        font-size: 7rem;
-        line-height: 6rem;
+        @include adaptiveValue("font-size", 100, 20);
+        @include adaptiveValue("line-height", 100, 20);
         text-transform: uppercase;
+
+        @media(max-width: 1440px) {}
 
         span {
             display: block;
@@ -38,12 +40,11 @@
         h2 {
             position: absolute;
             top: 100%;
-            // left: 5%;
             transform: translateY(-100%) rotate(20deg);
             color: $redLihgt;
             text-shadow: 3.46px 4.613px 8.419px $red;
             -webkit-text-stroke: 3px $white;
-            font-size: 6.5rem;
+            @include adaptiveValue("font-size", 90, 0);
             font-weight: 700;
             text-align: center;
         }
@@ -53,28 +54,31 @@
     .text-block {
         display: flex;
         flex-direction: column;
-        gap: rem(50);
+        @include adaptiveValue("gap", 50, 0);
         margin-left: rem(50);
         flex: 0.6;
+
+        @media(max-width: rem(1440)){
+            @include adaptiveValue("gap", 40, 0);
+        }
     }
 
     .about {
         display: flex;
         flex-direction: column;
-        gap: rem(50);
+        @include adaptiveValue("gap", 50, 0);
+        @media(max-width: rem(1440)){
+            @include adaptiveValue("gap", 20, 0);
+        }
 
         p:first-child {
             color: $darkColorPurple;
-            font-size: 4.5rem;
+            @include adaptiveValue("font-size", 70, 0);
             font-weight: 700;
-            line-height: 4rem;
+            @include adaptiveValue("line-height", 75, 20);
             letter-spacing: 0.12rem;
             text-shadow: rem(1) rem(1) rem(2) $black, rem(4) rem(4) rem(5) $mainColorPuprple;
             text-align: center;
-
-            @media(max-width: 1440px) {
-                font-size: 4rem;
-            }
         }
 
         p:last-child {
@@ -83,10 +87,9 @@
             text-shadow: 7.644px 5.46px 8.299px #8838C6;
             -webkit-text-stroke: 1px $white;
             /* Толщина и цвет обводки (для WebKit браузеров) */
-            font-size: 3.5rem;
+            @include adaptiveValue("font-size", 60, 0);
             font-weight: 700;
-            line-height: 4.5rem;
-            /* 146.617% */
+            @include adaptiveValue("line-height", 70, 20);
         }
     }
 
