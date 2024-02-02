@@ -30,12 +30,11 @@
                 transition: all 0.3s;
 
                 @media(max-width: rem(1440)) {
-                    margin-bottom: rem(20);
+                    margin-bottom: rem(22);
                     font-size: rem(28);
                 }
 
                 &:hover {
-                    // color:$black;
                     text-shadow: 5px 5px 20px $white;
                     font-size: rem(44);
                     margin-bottom: rem(14);
