@@ -46,12 +46,15 @@
                     /* 145.711% */
                     text-transform: uppercase;
                     transition: font-size 0.3s ease;
-                    @include adaptiveValue("font-size", 40, 20);
+                    @include adaptiveValue("font-size", 40, 10);
 
                     &::before {}
 
                     &:hover {
                         font-size: rem(45);
+                        @media(max-width: rem(1440)){
+                            font-size: rem(40);
+                        }
                     }
                 }
             }

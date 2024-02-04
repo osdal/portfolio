@@ -8,6 +8,10 @@
         height: rem(72);
         background-color: $mainColorPuprple;
 
+        @media(max-width: 1440px) {
+            height: rem(40);
+        }
+
         @media(max-width: 425px) {
             font-size: rem(14);
             text-align: center;
